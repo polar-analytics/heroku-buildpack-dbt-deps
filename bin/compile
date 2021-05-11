@@ -18,7 +18,8 @@ ENV_DIR=${3:-}
 if [ -f $ENV_DIR/BUILDPACK_DBT_DEPS_PROJECT_DIR ]; then
 	BUILDPACK_DBT_DEPS_PROJECT_DIR=`cat $ENV_DIR/BUILDPACK_DBT_DEPS_PROJECT_DIR`
 
-    dbt deps --project-dir $BUILDPACK_DBT_DEPS_PROJECT_DIR^
+    echo "Running command: dbt deps --project-dir $BUILDPACK_DBT_DEPS_PROJECT_DIR"
+    dbt deps --project-dir $BUILDPACK_DBT_DEPS_PROJECT_DIR
     exit 0
 fi
 
